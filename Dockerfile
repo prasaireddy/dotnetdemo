@@ -17,6 +17,11 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 
 COPY --from=build /app/publish .
 ENV ASPNETCORE_URLS http://*:5000
+RUN groupadd -r prasai && \
+    useradd -r -g prasai -s /bin/false prasai && \
+    chown -R prasai:prasai /app
+
+USER prasai
 
 EXPOSE 5000
 ENTRYPOINT ["dotnet", "dotnet6.dll"]
