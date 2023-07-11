@@ -1,4 +1,5 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+
 WORKDIR /app
 
 RUN apt-get update
@@ -17,9 +18,9 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
 
 COPY --from=build /app/publish .
 ENV ASPNETCORE_URLS http://*:5000
+
 RUN groupadd -r prasai && \
-    useradd -r -g prasai -s /bin/false prasai && \
-    chown -R prasai:prasai /app
+    useradd -r -g prasai -s /bin/false prasai
 
 USER prasai
 
