@@ -24,5 +24,5 @@ RUN groupadd -r prasai && \
 
 USER prasai
 
-EXPOSE 5000
+EXPOSE 8080
 ENTRYPOINT ["dotnet", "dotnet6.dll"]
