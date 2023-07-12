@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dotnetdemo-app
+  namespace: prasai
+  labels:
+    app: dotnetdemo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dotnetdemo-app
+  template:
+    metadata:
+      labels:
+        app: dotnetdemo-app
+    spec:
+      containers:
+      - name: dotnetdemo-app
+        image: prasaireddy/projectrepo:latest
+        ports:
+        - containerPort: 5000
