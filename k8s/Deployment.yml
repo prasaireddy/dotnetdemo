@@ -2,11 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dotnetdemo-app
-  namespace: prasai
+  namespace: ipl
   labels:
     app: dotnetdemo-app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: dotnetdemo-app
@@ -17,6 +17,8 @@ spec:
     spec:
       containers:
       - name: dotnetdemo-app
-        image: prasaireddy/projectrepo:latest
+        image: viratkohli.azurecr.io/hyderabad:latest
         ports:
         - containerPort: 5000
+      imagePullSecrets:
+      - name: cricket
