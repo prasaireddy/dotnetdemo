@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: dotnetdemo-app
-  namespace: ipl
+  namespace: mynamespace
   labels:
     app: dotnetdemo-app
 spec:
@@ -17,8 +17,8 @@ spec:
     spec:
       containers:
       - name: dotnetdemo-app
-        image: viratkohli.azurecr.io/hyderabad:latest
+        image: mydockerimage007.azurecr.io/dotnetapp:1.0.0
         ports:
         - containerPort: 5000
       imagePullSecrets:
-      - name: cricket
+      - name: surya
