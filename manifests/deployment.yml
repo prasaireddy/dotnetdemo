@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: prasaireddydotnetdemo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prasaireddydotnetdemo
+  template:
+    metadata:
+      labels:
+        app: prasaireddydotnetdemo 
+    spec:
+      containers:
+        - name: prasaireddydotnetdemo 
+          image: dotnetipl.azurecr.io/prasaireddydotnetdemo
+          ports:
+          - containerPort: 8080
