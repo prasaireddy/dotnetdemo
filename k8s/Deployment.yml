@@ -21,4 +21,4 @@ spec:
         ports:
         - containerPort: 5000
       imagePullSecrets:
-      - name: surya
+      - name: dotnetipl47584f91-auth
